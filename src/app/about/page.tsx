@@ -5,16 +5,16 @@ import WhatIsLunex from "@/components/about-page/WhatIsLunex";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Lunex",
+  title: "About Lunex OPS",
   description:
-    "Lunex is an independent digital development studio building serious websites and web applications for ambitious businesses.",
+    "Lunex OPS is an independent digital development studio building serious websites and web applications for ambitious businesses.",
 
   alternates: {
     canonical: "/about",
   },
 
   openGraph: {
-    title: "About Lunex",
+    title: "About Lunex OPS",
     description:
       "A small studio building serious digital products through thoughtful design and engineering.",
     url: "/about",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "About Lunex",
+        alt: "About Lunex OPS",
       },
     ],
   },

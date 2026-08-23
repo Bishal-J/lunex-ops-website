@@ -1,6 +1,6 @@
-# Lunex
+# Lunex OPS
 
-Official website for **Lunex**, a digital development studio building high-performance websites and custom web applications for businesses and startups.
+Official website for **Lunex OPS**, a digital development studio building high-performance websites and custom web applications for businesses and startups.
 
 ## Tech Stack
 
@@ -16,7 +16,7 @@ Official website for **Lunex**, a digital development studio building high-perfo
 - `/` — Home
 - `/services` — Services
 - `/work` — Selected Work
-- `/about` — About Lunex
+- `/about` — About Lunex OPS
 - `/contact` — Start a Project
 
 ## Getting Started

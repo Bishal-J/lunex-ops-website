@@ -41,7 +41,7 @@ const NotFound = () => {
           {/* Metadata */}
           <div className="mt-16 flex items-center justify-between border-t border-border pt-5">
             <span className="font-label text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-              Lunex / Not Found
+              Lunex <span className="text-primary">ops</span> / Not Found
             </span>
 
             <span className="font-label text-[10px] text-muted-foreground">

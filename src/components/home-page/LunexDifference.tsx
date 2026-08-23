@@ -35,7 +35,7 @@ const LunexDifference = () => {
               <span className="size-2 bg-primary" />
 
               <p className="font-label text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                Why Lunex
+                Why Lunex <span className="text-primary">ops</span>
               </p>
             </div>
 

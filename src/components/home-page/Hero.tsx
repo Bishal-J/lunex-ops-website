@@ -26,8 +26,9 @@ const HeroSection = () => {
               </h1>
 
               <p className="mt-8 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-                Lunex designs and develops high-performance websites and custom
-                web applications for businesses and startups.
+                Lunex <span className="text-primary">ops</span> designs and
+                develops high-performance websites and custom web applications
+                for businesses and startups.
               </p>
 
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">

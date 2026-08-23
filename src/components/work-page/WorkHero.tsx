@@ -22,7 +22,7 @@ const WorkHero = () => {
 
             <p className="mt-8 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               A collection of websites, applications and digital concepts built
-              by Lunex.
+              by Lunex <span className="text-primary">ops</span>.
             </p>
           </div>
         </div>

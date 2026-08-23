@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const navigation = [
   { label: "Home", href: "/" },
@@ -28,7 +29,7 @@ const Header = () => {
           className="text-xl font-semibold tracking-[-0.04em] text-foreground"
           aria-label="Lunex home"
         >
-          Lunex
+          <Image src={"/logo.svg"} alt="logo" width={165} height={44} />
         </Link>
 
         {/* Desktop Navigation */}

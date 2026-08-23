@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Explore Lunex services for high-performance websites, custom web applications and ongoing development built around your business.",
+    "Explore Lunex OPS services for high-performance websites, custom web applications and ongoing development built around your business.",
 
   alternates: {
     canonical: "/services",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Lunex services",
+        alt: "Lunex OPS services",
       },
     ],
   },

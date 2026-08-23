@@ -33,9 +33,10 @@ const OngoingDevelopment = () => {
             </h2>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              Your product should keep improving after launch. Lunex provides
-              ongoing development, technical support and improvements as your
-              business evolves.
+              Your product should keep improving after launch. Lunex{" "}
+              <span className="text-primary">ops</span>
+              provides ongoing development, technical support and improvements
+              as your business evolves.
             </p>
           </div>
         </div>

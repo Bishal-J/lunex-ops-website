@@ -22,7 +22,7 @@ const ServicesHero = () => {
 
             <p className="mt-8 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               From high-performance websites to custom web applications, Lunex
-              builds digital experiences designed around your goals.
+              OPS builds digital experiences designed around your goals.
             </p>
           </div>
         </div>

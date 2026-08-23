@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const exploreLinks = [
   { label: "Home", href: "/" },
@@ -31,12 +32,13 @@ const Footer = () => {
               className="text-2xl font-semibold tracking-[-0.04em] text-foreground"
               aria-label="Lunex home"
             >
-              Lunex
+              <Image src={"/logo.svg"} alt="logo" width={165} height={44} />
             </Link>
 
             <p className="mt-5 max-w-sm text-sm leading-6 text-muted-foreground">
-              Lunex designs and develops high-performance websites and custom
-              web applications for businesses and startups.
+              Lunex <span className="text-primary">ops</span> designs and
+              develops high-performance websites and custom web applications for
+              businesses and startups.
             </p>
           </div>
 
@@ -97,7 +99,8 @@ const Footer = () => {
         {/* Bottom */}
         <div className="flex flex-col gap-3 border-t border-border py-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-label text-[11px] text-muted-foreground">
-            © 2026 Lunex. All rights reserved.
+            © 2026 Lunex <span className="text-primary">ops</span>. All rights
+            reserved.
           </p>
 
           <p className="font-label text-[11px] uppercase tracking-[0.12em] text-muted-foreground">

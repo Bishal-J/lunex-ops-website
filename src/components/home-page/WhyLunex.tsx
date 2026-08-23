@@ -23,7 +23,7 @@ const WhyLunex = () => {
               <span className="size-2 bg-primary" />
 
               <p className="font-label text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                Why Lunex
+                Why Lunex <span className="text-primary">ops</span>
               </p>
             </div>
 
@@ -38,7 +38,8 @@ const WhyLunex = () => {
 
             <p className="mt-5 max-w-lg text-sm leading-6 text-muted-foreground">
               From responsive interfaces to integrations, authentication,
-              payments and data-driven systems, Lunex handles the engineering
+              payments and data-driven systems, Lunex{" "}
+              <span className="text-primary">ops</span> handles the engineering
               behind the experience so your product stays clear, fast and
               usable.
             </p>

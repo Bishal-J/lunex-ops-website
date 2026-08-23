@@ -54,7 +54,8 @@ const SelectedWork = () => {
             </h2>
 
             <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              A selection of digital products and experiences built by Lunex.
+              A selection of digital products and experiences built by Lunex
+              OPS.
             </p>
           </div>
         </div>

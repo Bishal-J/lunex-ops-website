@@ -64,7 +64,7 @@ const FinalCta = () => {
 
           {/* Technical Metadata */}
           <div className="absolute bottom-5 left-6 hidden font-label text-[10px] uppercase tracking-[0.16em] text-muted-foreground sm:block">
-            Lunex / Project Intake
+            Lunex <span className="text-primary">ops</span> / Project Intake
           </div>
 
           <div className="absolute bottom-5 right-6 hidden font-label text-[10px] text-muted-foreground sm:block">

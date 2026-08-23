@@ -9,7 +9,7 @@ const WhatIsLunex = () => {
               <span className="size-2 bg-primary" />
 
               <p className="font-label text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                What is Lunex?
+                What is Lunex <span className="text-primary ">ops</span>?
               </p>
             </div>
           </div>
@@ -17,9 +17,9 @@ const WhatIsLunex = () => {
           {/* Content */}
           <div>
             <p className="max-w-3xl text-2xl font-medium leading-tight tracking-[-0.03em] text-foreground sm:text-3xl lg:text-4xl">
-              Lunex is a small, independent digital development studio focused
-              on building websites and web applications that solve real business
-              problems.
+              Lunex <span className="text-primary">ops</span> is a small,
+              independent digital development studio focused on building
+              websites and web applications that solve real business problems.
             </p>
 
             <div className="mt-12 grid gap-10 border-t border-border pt-10 sm:grid-cols-2">
@@ -31,7 +31,7 @@ const WhatIsLunex = () => {
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">
                   Too many digital products are built around templates,
                   unnecessary complexity or technology for its own sake. Lunex
-                  exists to take a more thoughtful approach — understand the
+                  OPS exists to take a more thoughtful approach — understand the
                   problem first, then build what actually makes sense.
                 </p>
               </div>
@@ -43,7 +43,8 @@ const WhatIsLunex = () => {
 
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">
                   From high-performance marketing websites to custom
-                  applications, internal tools and digital platforms, Lunex
+                  applications, internal tools and digital platforms, Lunex{" "}
+                  <span className="text-primary">ops</span>
                   combines design and engineering to create products built for
                   how businesses actually work.
                 </p>
@@ -67,10 +68,11 @@ const WhatIsLunex = () => {
                 </p>
 
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                  Lunex is starting small and intentionally. Today, it is driven
-                  by a hands-on approach to every project, with the long-term
-                  goal of becoming a remotely operated studio that brings
-                  together great people, design and engineering.
+                  Lunex <span className="text-primary">ops</span> is starting
+                  small and intentionally. Today, it is driven by a hands-on
+                  approach to every project, with the long-term goal of becoming
+                  a remotely operated studio that brings together great people,
+                  design and engineering.
                 </p>
               </div>
             </div>

@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Selected Work",
   description:
-    "Explore websites, web applications and digital product concepts built by Lunex.",
+    "Explore websites, web applications and digital product concepts built by Lunex OPS.",
 
   alternates: {
     canonical: "/work",
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Selected Work",
     description:
-      "A collection of websites, applications and digital concepts built by Lunex.",
+      "A collection of websites, applications and digital concepts built by Lunex OPS.",
     url: "/work",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Selected work by Lunex",
+        alt: "Selected work by Lunex OPS",
       },
     ],
   },

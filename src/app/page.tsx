@@ -12,7 +12,7 @@ import WhyLunex from "@/components/home-page/WhyLunex";
 export const metadata: Metadata = {
   title: "Websites & Web Applications Built for Growth",
   description:
-    "Lunex designs and develops high-performance websites and custom web applications for businesses and startups.",
+    "Lunex OPS designs and develops high-performance websites and custom web applications for businesses and startups.",
 
   alternates: {
     canonical: "/",
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Websites & Web Applications Built for Growth",
     description:
-      "Lunex designs and develops high-performance websites and custom web applications for businesses and startups.",
+      "Lunex OPS designs and develops high-performance websites and custom web applications for businesses and startups.",
     url: "/",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Lunex — Websites and web applications engineered for growth",
+        alt: "Lunex OPS — Websites and web applications engineered for growth",
       },
     ],
   },

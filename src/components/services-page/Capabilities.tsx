@@ -63,7 +63,8 @@ const Capabilities = () => {
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               From interfaces and infrastructure to product functionality and
-              performance, Lunex brings the pieces together under one roof.
+              performance, Lunex <span className="text-primary">ops</span>{" "}
+              brings the pieces together under one roof.
             </p>
           </div>
         </div>
