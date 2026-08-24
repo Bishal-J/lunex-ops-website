@@ -19,7 +19,7 @@ const FeaturedProject = () => {
           href="/work/growth-sailor"
           className="group mt-8 block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
         >
-          <div className="relative aspect-[16/8] overflow-hidden border border-border bg-card sm:aspect-[16/7]">
+          <div className="relative aspect-16/8 overflow-hidden border border-border bg-card sm:aspect-16/7">
             {/* Technical Grid */}
             <div
               className="absolute inset-0 opacity-50 transition-transform duration-700 ease-out group-hover:scale-[1.02]"

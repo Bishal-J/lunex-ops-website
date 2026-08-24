@@ -102,7 +102,7 @@ const WhyLunex = () => {
 
         {/* Bottom statement */}
         <div className="mt-16 border-t border-border pt-6">
-          <p className="max-w-4xl text-2xl font-medium leading-tight tracking-[-0.025em] text-foreground sm:text-3xl lg:text-4xl">
+          <p className="max-w-4xl text-2xl font-medium leading-tight tracking-tight text-foreground sm:text-3xl lg:text-4xl">
             The technology stays behind the scenes.{" "}
             <span className="text-muted-foreground">
               The experience stays simple.

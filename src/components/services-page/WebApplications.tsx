@@ -15,7 +15,10 @@ const applicationTypes = [
 
 const WebApplications = () => {
   return (
-    <section className="border-b border-border bg-background">
+    <section
+      className="border-b border-border bg-background"
+      id="web-applications"
+    >
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
         {/* Section Header */}
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">

@@ -62,7 +62,7 @@ const Process = () => {
             {processSteps.map((step, index) => (
               <div
                 key={step.number}
-                className={`group relative min-h-[300px] border-border p-6 transition-colors duration-300 hover:bg-card ${
+                className={`group relative min-h-75 border-border p-6 transition-colors duration-300 hover:bg-card ${
                   index !== processSteps.length - 1 ? "border-r" : ""
                 }`}
               >
@@ -108,7 +108,7 @@ const Process = () => {
                 </span>
 
                 {index !== processSteps.length - 1 && (
-                  <span className="absolute left-[5px] top-7 h-[calc(100%+1px)] w-px bg-border" />
+                  <span className="absolute left-1.25 top-7 h-[calc(100%+1px)] w-px bg-border" />
                 )}
               </div>
 

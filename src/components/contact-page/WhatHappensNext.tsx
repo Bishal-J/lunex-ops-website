@@ -50,7 +50,7 @@ const WhatHappensNext = () => {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="group flex min-h-[280px] flex-col bg-background p-6 transition-colors duration-300 hover:bg-card sm:p-8"
+              className="group flex min-h-70 flex-col bg-background p-6 transition-colors duration-300 hover:bg-card sm:p-8"
             >
               <div className="flex items-center justify-between">
                 <span className="font-label text-[10px] text-muted-foreground">

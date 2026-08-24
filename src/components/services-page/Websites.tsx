@@ -23,7 +23,7 @@ const capabilities = [
 
 const Websites = () => {
   return (
-    <section className="border-b border-border bg-background">
+    <section className="border-b border-border bg-background" id="websites">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
         {/* Section Header */}
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
@@ -54,7 +54,7 @@ const Websites = () => {
           {websiteTypes.map((type, index) => (
             <div
               key={type}
-              className={`group flex items-center justify-between border-b border-border px-5 py-5 transition-colors duration-300 hover:bg-card md:[&:nth-child(odd)]:border-r lg:[&:nth-child(3n+1)]:border-r lg:[&:nth-child(3n+2)]:border-r ${
+              className={`group flex items-center justify-between border-b border-border px-5 py-5 transition-colors duration-300 hover:bg-card md:odd:border-r lg:nth-[3n+1]:border-r lg:nth-[3n+2]:border-r ${
                 index >= websiteTypes.length - 3 ? "lg:border-b-0" : ""
               } ${
                 index >= websiteTypes.length - 2

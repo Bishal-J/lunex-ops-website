@@ -74,7 +74,7 @@ const Capabilities = () => {
           {capabilityGroups.map((group) => (
             <div
               key={group.number}
-              className="group flex min-h-[320px] flex-col bg-background p-6 transition-colors duration-300 hover:bg-card sm:p-8"
+              className="group flex min-h-80 flex-col bg-background p-6 transition-colors duration-300 hover:bg-card sm:p-8"
             >
               {/* Header */}
               <div className="flex items-start justify-between">

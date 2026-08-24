@@ -51,7 +51,7 @@ const HeroSection = () => {
             </div>
 
             {/* Technical Visual */}
-            <div className="relative min-h-[420px] border border-border bg-card lg:min-h-[560px]">
+            <div className="relative min-h-105 border border-border bg-card lg:min-h-140">
               {/* Grid */}
               <div
                 className="absolute inset-0 opacity-60"
@@ -81,7 +81,7 @@ const HeroSection = () => {
 
               {/* Main Interface */}
               <div className="absolute inset-10 flex items-center justify-center sm:inset-16">
-                <div className="relative aspect-square w-full max-w-[360px] border border-foreground/20">
+                <div className="relative aspect-square w-full max-w-90 border border-foreground/20">
                   {/* Primary Shape */}
                   <div className="absolute left-1/2 top-1/2 size-[45%] -translate-x-1/2 -translate-y-1/2 bg-primary" />
 

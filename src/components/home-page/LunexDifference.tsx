@@ -64,7 +64,7 @@ const LunexDifference = () => {
 
                 {/* Content */}
                 <div>
-                  <h3 className="text-xl font-semibold tracking-[-0.025em] text-foreground">
+                  <h3 className="text-xl font-semibold tracking-tight text-foreground">
                     {feature.title}
                   </h3>
 

@@ -49,7 +49,7 @@ const HowWeThink = () => {
           {principles.map((principle) => (
             <div
               key={principle.number}
-              className="group flex min-h-[300px] flex-col bg-background p-6 transition-colors duration-300 hover:bg-card sm:p-8"
+              className="group flex min-h-75 flex-col bg-background p-6 transition-colors duration-300 hover:bg-card sm:p-8"
             >
               <span className="font-label text-[10px] text-muted-foreground">
                 {principle.number}

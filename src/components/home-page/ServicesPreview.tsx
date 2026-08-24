@@ -7,7 +7,7 @@ const services = [
     title: "Websites",
     description:
       "High-performance websites designed around your brand, audience and business goals.",
-    href: "/services/websites",
+    href: "/services#websites",
     cta: "Explore Websites",
   },
   {
@@ -15,7 +15,7 @@ const services = [
     title: "Web Applications",
     description:
       "Custom dashboards, platforms, portals and tools built around the way your business works.",
-    href: "/services/web-applications",
+    href: "/services#web-applications",
     cta: "Explore Web Applications",
   },
   {
@@ -23,7 +23,7 @@ const services = [
     title: "Ongoing Development",
     description:
       "Continuous development, improvements and technical support after launch.",
-    href: "/services/ongoing-development",
+    href: "/services#ongoing-development",
     cta: "Explore Development",
   },
 ];
@@ -45,7 +45,7 @@ const ServicesPreview = () => {
           </div>
 
           <div>
-            <h2 className="max-w-3xl text-4xl font-semibold leading-[1] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl">
+            <h2 className="max-w-3xl text-4xl font-semibold leading-none tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl">
               Digital products built around your business.
             </h2>
           </div>
@@ -56,7 +56,7 @@ const ServicesPreview = () => {
           {services.map((service) => (
             <article
               key={service.number}
-              className="group relative flex min-h-[390px] flex-col bg-background p-6 transition-colors duration-300 hover:bg-card sm:p-8"
+              className="group relative flex min-h-97.5 flex-col bg-background p-6 transition-colors duration-300 hover:bg-card sm:p-8"
             >
               {/* Number */}
               <div className="flex items-center justify-between">

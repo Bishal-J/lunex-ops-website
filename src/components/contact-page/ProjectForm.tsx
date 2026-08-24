@@ -108,7 +108,7 @@ const ProjectForm = () => {
               </p>
             </div>
 
-            <h2 className="mt-8 max-w-md text-3xl font-semibold leading-[1] tracking-[-0.04em] text-foreground sm:text-4xl">
+            <h2 className="mt-8 max-w-md text-3xl font-semibold leading-none tracking-[-0.04em] text-foreground sm:text-4xl">
               Tell us what you&apos;re building.
             </h2>
 

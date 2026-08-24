@@ -74,8 +74,8 @@ const SelectedWork = () => {
               <div
                 className={`relative overflow-hidden border border-border bg-card ${
                   project.featured
-                    ? "aspect-[16/8] sm:aspect-[16/7]"
-                    : "aspect-[16/10]"
+                    ? "aspect-16/8 sm:aspect-16/7"
+                    : "aspect-16/10"
                 }`}
               >
                 {/* Technical Grid */}
@@ -131,7 +131,7 @@ const SelectedWork = () => {
               {/* Project Info */}
               <div className="mt-5 flex items-start justify-between gap-6">
                 <div>
-                  <h3 className="text-xl font-semibold tracking-[-0.025em] text-foreground sm:text-2xl">
+                  <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
                     {project.title}
                   </h3>
 
