@@ -47,11 +47,11 @@ export const exploreLinks = [
 ];
 
 export const serviceLinks = [
-  { label: "Websites", href: "/services/websites" },
-  { label: "Web Applications", href: "/services/web-applications" },
+  { label: "Websites", href: "/services#websites" },
+  { label: "Web Applications", href: "/services#web-applications" },
   {
     label: "Ongoing Development",
-    href: "/services/ongoing-development",
+    href: "/services#ongoing-development",
   },
 ];
 
