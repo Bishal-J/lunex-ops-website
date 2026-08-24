@@ -1,25 +1,5 @@
+import { capabilities, websiteTypes } from "@/data/static";
 import { ArrowUpRight } from "lucide-react";
-
-const websiteTypes = [
-  "Business websites",
-  "Startup websites",
-  "SaaS websites",
-  "Finance websites",
-  "Real estate websites",
-  "Landing pages",
-];
-
-const capabilities = [
-  "Custom UI",
-  "Responsive design",
-  "Animation",
-  "CMS",
-  "Forms",
-  "Analytics",
-  "SEO",
-  "Performance optimization",
-  "Integrations",
-];
 
 const Websites = () => {
   return (

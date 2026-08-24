@@ -1,20 +1,4 @@
-const principles = [
-  {
-    number: "01",
-    title: "Don't sell technology.",
-    statement: "Sell the outcome.",
-  },
-  {
-    number: "02",
-    title: "Don't build for the sake of building.",
-    statement: "Solve a real business problem.",
-  },
-  {
-    number: "03",
-    title: "Don't stop at launch.",
-    statement: "Build products that can evolve.",
-  },
-];
+import { principles } from "@/data/static";
 
 const HowWeThink = () => {
   return (

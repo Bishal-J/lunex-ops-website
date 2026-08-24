@@ -1,25 +1,5 @@
+import { industries } from "@/data/static";
 import { ArrowUpRight } from "lucide-react";
-
-const industries = [
-  {
-    number: "01",
-    title: "Finance & Fintech",
-    description:
-      "Digital experiences where trust, clarity and performance matter.",
-  },
-  {
-    number: "02",
-    title: "SaaS & Technology",
-    description:
-      "Websites and applications designed for modern technology companies.",
-  },
-  {
-    number: "03",
-    title: "Real Estate",
-    description:
-      "Digital platforms and experiences designed to generate engagement and enquiries.",
-  },
-];
 
 const Industries = () => {
   return (

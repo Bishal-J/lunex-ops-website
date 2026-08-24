@@ -1,36 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-
-const projects = [
-  {
-    number: "01",
-    title: "Growth Sailor",
-    category: "CLIENT PROJECT",
-    href: "/work/growth-sailor",
-    featured: true,
-  },
-  {
-    number: "02",
-    title: "Investment Analytics Platform",
-    category: "CONCEPT / FINTECH",
-    href: "/work/investment-analytics",
-    featured: false,
-  },
-  {
-    number: "03",
-    title: "Real Estate Investment Platform",
-    category: "CONCEPT / REAL ESTATE",
-    href: "/work/real-estate-platform",
-    featured: false,
-  },
-  {
-    number: "04",
-    title: "SaaS Management Platform",
-    category: "CONCEPT / SAAS",
-    href: "/work/saas-management",
-    featured: false,
-  },
-];
+import { projects } from "@/data/static";
 
 const SelectedWork = () => {
   return (

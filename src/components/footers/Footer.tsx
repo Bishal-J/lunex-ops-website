@@ -1,23 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-
-const exploreLinks = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Work", href: "/work" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
-
-const serviceLinks = [
-  { label: "Websites", href: "/services/websites" },
-  { label: "Web Applications", href: "/services/web-applications" },
-  {
-    label: "Ongoing Development",
-    href: "/services/ongoing-development",
-  },
-];
+import { exploreLinks, serviceLinks } from "@/data/static";
 
 const Footer = () => {
   return (

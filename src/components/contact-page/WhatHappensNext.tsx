@@ -1,21 +1,4 @@
-const steps = [
-  {
-    number: "01",
-    title: "We review",
-    description: "We'll look through your project details.",
-  },
-  {
-    number: "02",
-    title: "We talk",
-    description:
-      "We'll schedule a conversation to understand the requirements.",
-  },
-  {
-    number: "03",
-    title: "We define",
-    description: "We'll work out the scope, approach and next steps.",
-  },
-];
+import { steps } from "@/data/static";
 
 const WhatHappensNext = () => {
   return (

@@ -1,17 +1,5 @@
+import { applicationTypes } from "@/data/static";
 import { ArrowUpRight } from "lucide-react";
-
-const applicationTypes = [
-  "Dashboards",
-  "Admin panels",
-  "Customer portals",
-  "Internal tools",
-  "SaaS MVPs",
-  "Booking systems",
-  "Data platforms",
-  "Payment systems",
-  "Workflow applications",
-  "API-driven applications",
-];
 
 const WebApplications = () => {
   return (

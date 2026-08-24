@@ -1,15 +1,5 @@
+import { developmentServices } from "@/data/static";
 import { ArrowUpRight } from "lucide-react";
-
-const developmentServices = [
-  "Maintenance",
-  "Bug fixes",
-  "New features",
-  "Performance improvements",
-  "Content updates",
-  "Integrations",
-  "Technical support",
-  "Continuous development",
-];
 
 const OngoingDevelopment = () => {
   return (

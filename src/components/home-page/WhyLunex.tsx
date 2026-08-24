@@ -1,16 +1,5 @@
+import { capabilities } from "@/data/static";
 import { ArrowUpRight } from "lucide-react";
-
-const capabilities = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Node.js",
-  "PostgreSQL",
-  "APIs & Integrations",
-  "Authentication",
-  "Payments",
-  "Performance",
-];
 
 const WhyLunex = () => {
   return (

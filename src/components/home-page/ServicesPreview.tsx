@@ -1,32 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-
-const services = [
-  {
-    number: "01",
-    title: "Websites",
-    description:
-      "High-performance websites designed around your brand, audience and business goals.",
-    href: "/services#websites",
-    cta: "Explore Websites",
-  },
-  {
-    number: "02",
-    title: "Web Applications",
-    description:
-      "Custom dashboards, platforms, portals and tools built around the way your business works.",
-    href: "/services#web-applications",
-    cta: "Explore Web Applications",
-  },
-  {
-    number: "03",
-    title: "Ongoing Development",
-    description:
-      "Continuous development, improvements and technical support after launch.",
-    href: "/services#ongoing-development",
-    cta: "Explore Development",
-  },
-];
+import { services } from "@/data/static";
 
 const ServicesPreview = () => {
   return (

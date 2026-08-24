@@ -4,13 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-
-const navigation = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Work", href: "/work" },
-  { label: "About", href: "/about" },
-];
+import { navigation } from "@/data/static";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

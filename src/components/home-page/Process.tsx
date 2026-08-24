@@ -1,37 +1,5 @@
+import { processSteps } from "@/data/static";
 import { ArrowRight } from "lucide-react";
-
-const processSteps = [
-  {
-    number: "01",
-    label: "DISCOVER",
-    description: "Understand the business, users and goals.",
-  },
-  {
-    number: "02",
-    label: "DEFINE",
-    description: "Turn requirements into a clear scope and plan.",
-  },
-  {
-    number: "03",
-    label: "DESIGN",
-    description: "Create the experience and interface.",
-  },
-  {
-    number: "04",
-    label: "BUILD",
-    description: "Engineer the website or application.",
-  },
-  {
-    number: "05",
-    label: "LAUNCH",
-    description: "Test, optimize and deploy.",
-  },
-  {
-    number: "06",
-    label: "EVOLVE",
-    description: "Continue improving after launch.",
-  },
-];
 
 const Process = () => {
   return (

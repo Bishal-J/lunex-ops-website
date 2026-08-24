@@ -1,28 +1,5 @@
+import { features } from "@/data/static";
 import { ArrowUpRight } from "lucide-react";
-
-const features = [
-  {
-    number: "01",
-    title: "Performance First",
-    description:
-      "Fast, responsive experiences built with modern web technology.",
-  },
-  {
-    number: "02",
-    title: "Built Around Your Business",
-    description: "No unnecessary templates or one-size-fits-all solutions.",
-  },
-  {
-    number: "03",
-    title: "From Idea to Production",
-    description: "Development, integrations and deployment under one roof.",
-  },
-  {
-    number: "04",
-    title: "Built to Evolve",
-    description: "Continue improving your product after launch.",
-  },
-];
 
 const LunexDifference = () => {
   return (

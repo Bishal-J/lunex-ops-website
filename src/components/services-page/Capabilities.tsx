@@ -1,44 +1,4 @@
-const capabilityGroups = [
-  {
-    number: "01",
-    title: "Frontend",
-    description:
-      "Modern interfaces engineered for speed, flexibility and scale.",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    number: "02",
-    title: "Backend",
-    description:
-      "Reliable application infrastructure built around your requirements.",
-    items: ["Node.js", "Express", "PostgreSQL", "Prisma"],
-  },
-  {
-    number: "03",
-    title: "Product",
-    description:
-      "Core functionality that turns an interface into a useful product.",
-    items: [
-      "Authentication",
-      "Payments",
-      "APIs",
-      "Integrations",
-      "Permissions",
-    ],
-  },
-  {
-    number: "04",
-    title: "Experience",
-    description:
-      "Thoughtful interactions that keep complex products simple to use.",
-    items: [
-      "Performance",
-      "Animation",
-      "Responsive design",
-      "Interactive experiences",
-    ],
-  },
-];
+import { capabilityGroups } from "@/data/static";
 
 const Capabilities = () => {
   return (
