@@ -38,7 +38,7 @@ const ProjectForm = () => {
     setSubmitError("");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(`${process.env.PORT}/contacts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -227,9 +227,9 @@ const ProjectForm = () => {
                         Select a project type
                       </option>
 
-                      {projectTypes.map((type) => (
-                        <option key={type} value={type}>
-                          {type}
+                      {Object.entries(projectTypes).map(([label, value]) => (
+                        <option key={value} value={value}>
+                          {label}
                         </option>
                       ))}
                     </select>
