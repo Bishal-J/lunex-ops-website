@@ -68,10 +68,10 @@ const ConceptProjects = () => {
               key={project.number}
               href="/contact"
               aria-label={`Discuss a ${project.title} project`}
-              className="group flex min-h-[30rem] flex-col bg-background transition-colors duration-300 hover:bg-card focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
+              className="group flex min-h-120 flex-col bg-background transition-colors duration-300 hover:bg-card focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
             >
               {/* Visual */}
-              <div className="relative aspect-[4/3] overflow-hidden border-b border-border bg-muted">
+              <div className="relative aspect-4/3 overflow-hidden border-b border-border bg-muted">
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 opacity-50 transition-transform duration-700 group-hover:scale-105"
