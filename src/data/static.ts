@@ -3,7 +3,7 @@ export const principles = [
   {
     number: "01",
     title: "Don't sell technology.",
-    statement: "Sell the outcome.",
+    statement: "Focus on the outcome.",
   },
   {
     number: "02",
@@ -22,18 +22,17 @@ export const steps = [
   {
     number: "01",
     title: "We review",
-    description: "We'll look through your project details.",
+    description: "Review the submitted project details.",
   },
   {
     number: "02",
     title: "We talk",
-    description:
-      "We'll schedule a conversation to understand the requirements.",
+    description: "Understand the requirements through a conversation.",
   },
   {
     number: "03",
     title: "We define",
-    description: "We'll work out the scope, approach and next steps.",
+    description: "Establish the scope, approach, and next steps.",
   },
 ];
 
@@ -67,78 +66,87 @@ export const navigation = [
 export const industries = [
   {
     number: "01",
-    title: "Finance & Fintech",
+    title: "Startups & SaaS",
     description:
-      "Digital experiences where trust, clarity and performance matter.",
+      "Websites and custom applications that help early-stage teams validate ideas, launch products, and build their digital foundation.",
   },
   {
     number: "02",
-    title: "SaaS & Technology",
+    title: "Professional Services",
     description:
-      "Websites and applications designed for modern technology companies.",
+      "Clear, professional digital experiences for service businesses looking to present their offering and support customer engagement.",
   },
   {
     number: "03",
-    title: "Real Estate",
+    title: "Growing Businesses",
     description:
-      "Digital platforms and experiences designed to generate engagement and enquiries.",
+      "Custom digital tools and web experiences designed to support evolving business requirements and internal workflows.",
   },
 ];
 
 export const features = [
   {
     number: "01",
-    title: "Performance First",
+    title: "Design with Purpose",
     description:
-      "Fast, responsive experiences built with modern web technology.",
+      "We create clear, thoughtful interfaces that connect your brand with the people using your product.",
   },
   {
     number: "02",
-    title: "Built Around Your Business",
-    description: "No unnecessary templates or one-size-fits-all solutions.",
+    title: "Engineering That Scales",
+    description:
+      "We build maintainable software with a technical foundation that can evolve alongside your requirements.",
   },
   {
     number: "03",
-    title: "From Idea to Production",
-    description: "Development, integrations and deployment under one roof.",
+    title: "Built Around Your Needs",
+    description:
+      "We adapt our approach to your business context, product goals, and the problems you need to solve.",
   },
   {
     number: "04",
-    title: "Built to Evolve",
-    description: "Continue improving your product after launch.",
+    title: "A Collaborative Process",
+    description:
+      "We work with you through planning, design, development, and iteration to keep the work aligned with your goals.",
   },
 ];
 
 export const processSteps = [
   {
     number: "01",
-    label: "DISCOVER",
-    description: "Understand the business, users and goals.",
+    label: "Discover",
+    description:
+      "We understand your business, goals, users, and requirements to establish a clear project direction.",
   },
   {
     number: "02",
-    label: "DEFINE",
-    description: "Turn requirements into a clear scope and plan.",
+    label: "Plan",
+    description:
+      "We define the project scope, technical approach, priorities, and milestones before development begins.",
   },
   {
     number: "03",
-    label: "DESIGN",
-    description: "Create the experience and interface.",
+    label: "Design",
+    description:
+      "We shape intuitive user experiences and purposeful interfaces that align with your brand and objectives.",
   },
   {
     number: "04",
-    label: "BUILD",
-    description: "Engineer the website or application.",
+    label: "Develop",
+    description:
+      "We build reliable, maintainable digital products using practical engineering and iterative development.",
   },
   {
     number: "05",
-    label: "LAUNCH",
-    description: "Test, optimize and deploy.",
+    label: "Refine",
+    description:
+      "We test, review, and improve the product to ensure quality, usability, and alignment with your requirements.",
   },
   {
     number: "06",
-    label: "EVOLVE",
-    description: "Continue improving after launch.",
+    label: "Launch",
+    description:
+      "We prepare your product for release and help establish a foundation for ongoing improvements.",
   },
 ];
 
@@ -178,24 +186,24 @@ export const services = [
     number: "01",
     title: "Websites",
     description:
-      "High-performance websites designed around your brand, audience and business goals.",
-    href: "/services#websites",
+      "Marketing websites that communicate your brand, showcase your offering, and create a clear path for visitors to take action.",
+    href: "/services/websites",
     cta: "Explore Websites",
   },
   {
     number: "02",
     title: "Web Applications",
     description:
-      "Custom dashboards, platforms, portals and tools built around the way your business works.",
-    href: "/services#web-applications",
-    cta: "Explore Web Applications",
+      "Custom web applications built around your workflows, from internal business tools to customer-facing digital products.",
+    href: "/services/web-applications",
+    cta: "Explore Applications",
   },
   {
     number: "03",
-    title: "Ongoing Development",
+    title: "Product Development",
     description:
-      "Continuous development, improvements and technical support after launch.",
-    href: "/services#ongoing-development",
+      "From early-stage concepts to ongoing improvements, we help turn product ideas into practical, maintainable software.",
+    href: "/services/product-development",
     cta: "Explore Development",
   },
 ];

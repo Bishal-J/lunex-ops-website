@@ -1,14 +1,19 @@
 import { steps } from "@/data/static";
 
 const WhatHappensNext = () => {
+  const stepCount = String(steps.length).padStart(2, "0");
+
   return (
-    <section className="border-b border-border bg-background">
+    <section
+      className="border-b border-border bg-background"
+      aria-labelledby="what-happens-next-heading"
+    >
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
         {/* Header */}
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
             <div className="flex items-center gap-3">
-              <span className="size-2 bg-primary" />
+              <span className="size-2 bg-primary" aria-hidden="true" />
 
               <p className="font-label text-xs uppercase tracking-[0.18em] text-muted-foreground">
                 What Happens Next
@@ -17,7 +22,10 @@ const WhatHappensNext = () => {
           </div>
 
           <div>
-            <h2 className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl">
+            <h2
+              id="what-happens-next-heading"
+              className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl"
+            >
               A simple path forward.
             </h2>
 
@@ -31,20 +39,29 @@ const WhatHappensNext = () => {
         {/* Steps */}
         <div className="mt-16 grid gap-px border border-border bg-border md:grid-cols-3">
           {steps.map((step) => (
-            <div
+            <article
               key={step.number}
               className="group flex min-h-70 flex-col bg-background p-6 transition-colors duration-300 hover:bg-card sm:p-8"
             >
               <div className="flex items-center justify-between">
-                <span className="font-label text-[10px] text-muted-foreground">
+                <span
+                  className="font-label text-[10px] text-muted-foreground"
+                  aria-hidden="true"
+                >
                   {step.number}
                 </span>
 
-                <span className="size-2 bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <span
+                  className="size-2 bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                />
               </div>
 
               <div className="mt-auto">
-                <div className="mb-6 h-1 w-8 bg-primary transition-all duration-300 group-hover:w-14" />
+                <div
+                  className="mb-6 h-1 w-8 bg-primary transition-all duration-300 group-hover:w-14"
+                  aria-hidden="true"
+                />
 
                 <h3 className="text-2xl font-semibold tracking-[-0.035em] text-foreground sm:text-3xl">
                   {step.title}
@@ -54,11 +71,11 @@ const WhatHappensNext = () => {
                   {step.description}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
-        {/* Bottom note */}
+        {/* Bottom Note */}
         <div className="mt-10 flex flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-label text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
             Review → Conversation → Scope
@@ -70,13 +87,13 @@ const WhatHappensNext = () => {
         </div>
 
         {/* Metadata */}
-        <div className="mt-16 flex items-center justify-between border-t border-border pt-5">
+        <div className="mt-16 flex flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
           <span className="font-label text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
             Discovery / Requirements / Scope
           </span>
 
           <span className="font-label text-[10px] text-muted-foreground">
-            04 / 05
+            Contact / 03 · {stepCount} Steps
           </span>
         </div>
       </div>

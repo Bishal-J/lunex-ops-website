@@ -1,24 +1,26 @@
+import type { Metadata } from "next";
+
 import Capabilities from "@/components/services-page/Capabilities";
 import OngoingDevelopment from "@/components/services-page/OngoingDevelopment";
 import ServicesHero from "@/components/services-page/ServicesHero";
 import WebApplications from "@/components/services-page/WebApplications";
 import Websites from "@/components/services-page/Websites";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Services | Websites & Web Applications",
   description:
-    "Explore Lunex OPS services for high-performance websites, custom web applications and ongoing development built around your business.",
+    "Explore Lunex OPS services for strategic website design, custom web application development, and ongoing product improvements built around your business.",
 
   alternates: {
     canonical: "/services",
   },
 
   openGraph: {
-    title: "Websites & Web Application Development",
+    title: "Services | Lunex OPS",
     description:
-      "High-performance websites, custom web applications and ongoing development built around your business.",
+      "Strategic website design, custom web applications, and ongoing development for businesses and growing products.",
     url: "/services",
+    type: "website",
     images: [
       {
         url: "/og-image.png",
@@ -27,6 +29,14 @@ export const metadata: Metadata = {
         alt: "Lunex OPS services",
       },
     ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | Lunex OPS",
+    description:
+      "Websites, web applications, and ongoing development built around your business.",
+    images: ["/og-image.png"],
   },
 };
 

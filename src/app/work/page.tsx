@@ -4,19 +4,18 @@ import WorkHero from "@/components/work-page/WorkHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Selected Work",
+  title: "Selected Work | Lunex OPS",
   description:
-    "Explore websites, web applications and digital product concepts built by Lunex OPS.",
-
+    "Explore websites, web applications, and digital product concepts designed and developed by Lunex OPS.",
   alternates: {
     canonical: "/work",
   },
-
   openGraph: {
-    title: "Selected Work",
+    title: "Selected Work | Lunex OPS",
     description:
-      "A collection of websites, applications and digital concepts built by Lunex OPS.",
+      "Explore websites, web applications, and digital product concepts by Lunex OPS.",
     url: "/work",
+    type: "website",
     images: [
       {
         url: "/og-image.png",
@@ -25,6 +24,13 @@ export const metadata: Metadata = {
         alt: "Selected work by Lunex OPS",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Selected Work | Lunex OPS",
+    description:
+      "Explore websites, web applications, and digital product concepts by Lunex OPS.",
+    images: ["/og-image.png"],
   },
 };
 

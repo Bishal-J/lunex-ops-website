@@ -16,6 +16,8 @@ export const contactSchema = z.object({
 
   email: z.string().min(1, "Email is required").email("Enter a valid email"),
 
+  phone: z.string().optional(),
+
   website: z
     .string()
     .optional()
@@ -23,6 +25,8 @@ export const contactSchema = z.object({
       (value) => !value || /^https?:\/\/.+/i.test(value),
       "Enter a valid URL, including https://",
     ),
+
+  industry: z.string().optional(),
 
   projectType: z.enum(Object.values(projectTypes), {
     error: "Please select a project type",

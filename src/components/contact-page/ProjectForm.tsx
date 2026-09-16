@@ -25,7 +25,9 @@ const ProjectForm = () => {
       name: "",
       company: "",
       email: "",
+      phone: "",
       website: "",
+      industry: "",
       projectType: undefined,
       budget: "",
       timeline: "",
@@ -169,6 +171,28 @@ const ProjectForm = () => {
                   )}
                 </div>
 
+                {/* Phone */}
+                <div className="border-b border-border p-5">
+                  <label htmlFor="phone" className={labelClass}>
+                    Phone
+                  </label>
+
+                  <input
+                    id="phone"
+                    type="tel"
+                    autoComplete="tel"
+                    placeholder="+91 98765 43210"
+                    {...register("phone")}
+                    className={inputClass}
+                  />
+
+                  {errors.phone && (
+                    <p className="mt-2 text-xs text-danger">
+                      {errors.phone.message}
+                    </p>
+                  )}
+                </div>
+
                 {/* Website */}
                 <div className="border-b border-border p-5">
                   <label htmlFor="website" className={labelClass}>
@@ -187,6 +211,27 @@ const ProjectForm = () => {
                   {errors.website && (
                     <p className="mt-2 text-xs text-danger">
                       {errors.website.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Industry */}
+                <div className="border-b border-border p-5">
+                  <label htmlFor="industry" className={labelClass}>
+                    Industry
+                  </label>
+
+                  <input
+                    id="industry"
+                    type="text"
+                    placeholder="e.g. SaaS, Healthcare, Finance"
+                    {...register("industry")}
+                    className={inputClass}
+                  />
+
+                  {errors.industry && (
+                    <p className="mt-2 text-xs text-danger">
+                      {errors.industry.message}
                     </p>
                   )}
                 </div>
@@ -358,7 +403,7 @@ const ProjectForm = () => {
           </span>
 
           <span className="font-label text-[10px] text-muted-foreground">
-            03 / 05
+            Contact / 02
           </span>
         </div>
       </div>

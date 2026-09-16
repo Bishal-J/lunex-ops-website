@@ -2,17 +2,23 @@ import { developmentServices } from "@/data/static";
 import { ArrowUpRight } from "lucide-react";
 
 const OngoingDevelopment = () => {
+  const developmentServiceCount = String(developmentServices.length).padStart(
+    2,
+    "0",
+  );
+
   return (
     <section
-      className="border-b border-border bg-background"
       id="ongoing-development"
+      aria-labelledby="ongoing-development-heading"
+      className="border-b border-border bg-background"
     >
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
         {/* Section Header */}
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
             <div className="flex items-center gap-3">
-              <span className="size-2 bg-primary" />
+              <span aria-hidden="true" className="size-2 bg-primary" />
 
               <p className="font-label text-xs uppercase tracking-[0.18em] text-muted-foreground">
                 04 / Ongoing Development
@@ -21,45 +27,61 @@ const OngoingDevelopment = () => {
           </div>
 
           <div>
-            <h2 className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl">
+            <h2
+              id="ongoing-development-heading"
+              className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl"
+            >
               Launch isn&apos;t the finish line.
             </h2>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               Your product should keep improving after launch. Lunex{" "}
-              <span className="text-primary">ops</span>
-              provides ongoing development, technical support and improvements
-              as your business evolves.
+              <span className="text-primary">OPS</span> provides ongoing
+              development, technical support, and thoughtful improvements as
+              your business evolves.
             </p>
           </div>
         </div>
 
-        {/* Services */}
+        {/* Development Services */}
         <div className="mt-16 border-y border-border">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4">
             {developmentServices.map((service, index) => (
-              <div
+              <article
                 key={service}
                 className={`group flex min-h-36 flex-col justify-between border-b border-border p-5 transition-colors duration-300 hover:bg-card ${
                   index % 4 !== 3 ? "lg:border-r" : ""
-                } ${index % 2 === 0 ? "sm:border-r lg:border-r" : ""}`}
+                } ${index % 2 === 0 ? "sm:border-r lg:border-r" : ""} ${
+                  index >= developmentServices.length - 4 ? "lg:border-b-0" : ""
+                } ${
+                  index >= developmentServices.length - 2 ? "sm:border-b-0" : ""
+                }`}
               >
                 <div className="flex items-start justify-between">
-                  <span className="font-label text-[10px] text-muted-foreground">
+                  <span
+                    aria-hidden="true"
+                    className="font-label text-[10px] text-muted-foreground"
+                  >
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <ArrowUpRight className="size-3.5 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="size-3.5 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+                  />
                 </div>
 
                 <div className="mt-8">
-                  <span className="size-1.5 bg-primary" />
+                  <span
+                    aria-hidden="true"
+                    className="block size-1.5 bg-primary"
+                  />
 
                   <h3 className="mt-3 text-sm font-medium text-foreground">
                     {service}
                   </h3>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -76,20 +98,20 @@ const OngoingDevelopment = () => {
             <p className="max-w-3xl text-2xl font-medium leading-tight tracking-[-0.03em] text-foreground sm:text-3xl lg:text-4xl">
               Keep your digital product moving forward.{" "}
               <span className="text-muted-foreground">
-                Improve, adapt and build on what already works.
+                Improve, adapt, and build on what already works.
               </span>
             </p>
           </div>
         </div>
 
         {/* Metadata */}
-        <div className="mt-16 flex items-center justify-between border-t border-border pt-5">
+        <div className="mt-16 flex flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
           <span className="font-label text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
             Support / Improvement / Growth
           </span>
 
           <span className="font-label text-[10px] text-muted-foreground">
-            08 capabilities
+            {developmentServiceCount} capabilities
           </span>
         </div>
       </div>
