@@ -1,59 +1,33 @@
 "use client";
 
 import { useState } from "react";
-import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowUpRight, Loader2 } from "lucide-react";
-
-const projectTypes = [
-  "Website",
-  "Web Application",
-  "SaaS / MVP",
-  "Existing Product",
-  "Ongoing Development",
-  "Not Sure",
-] as const;
-
-const contactSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  company: z.string().optional(),
-  email: z.string().min(1, "Email is required").email("Enter a valid email"),
-  website: z
-    .string()
-    .optional()
-    .refine(
-      (value) => !value || /^https?:\/\/.+/i.test(value),
-      "Enter a valid URL, including https://",
-    ),
-  projectType: z.enum(projectTypes, {
-    error: "Please select a project type",
-  }),
-  budget: z.string().optional(),
-  timeline: z.string().optional(),
-  projectDetails: z
-    .string()
-    .min(10, "Please tell us a little more about your project"),
-  referral: z.string().optional(),
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
+import {
+  ContactFormValues,
+  contactSchema,
+  projectTypes,
+} from "@/validations/project-form";
 
 const ProjectForm = () => {
   const [submitError, setSubmitError] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
       company: "",
       email: "",
+      phone: "",
       website: "",
+      industry: "",
       projectType: undefined,
       budget: "",
       timeline: "",
@@ -64,21 +38,26 @@ const ProjectForm = () => {
 
   const onSubmit = async (data: ContactFormValues) => {
     setSubmitError("");
+    setSubmitSuccess(false);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/contacts`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
         },
-        body: JSON.stringify(data),
-      });
+      );
 
       if (!response.ok) {
         throw new Error("Something went wrong. Please try again.");
       }
 
       reset();
+      setSubmitSuccess(true);
     } catch (error) {
       setSubmitError(
         error instanceof Error
@@ -126,265 +105,294 @@ const ProjectForm = () => {
 
           {/* Form */}
           <div>
-            {isSubmitSuccessful ? (
-              <div className="border border-border bg-card p-8 sm:p-12">
-                <span className="inline-flex size-10 items-center justify-center bg-primary text-neutral">
-                  <ArrowUpRight className="size-5" />
-                </span>
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              noValidate
+              className="border border-border bg-card"
+            >
+              <div className="grid gap-0 sm:grid-cols-2">
+                {/* Name */}
+                <div className="border-b border-border p-5 sm:border-r">
+                  <label htmlFor="name" className={labelClass}>
+                    Name <span className="text-primary">*</span>
+                  </label>
 
-                <h3 className="mt-8 text-3xl font-semibold tracking-[-0.04em] text-foreground">
-                  Thanks for reaching out.
-                </h3>
+                  <input
+                    id="name"
+                    type="text"
+                    autoComplete="name"
+                    placeholder="Your name"
+                    {...register("name")}
+                    className={inputClass}
+                  />
 
-                <p className="mt-4 max-w-lg text-sm leading-6 text-muted-foreground">
-                  We&apos;ve received your project details and will get back to
-                  you soon.
+                  {errors.name && (
+                    <p className="mt-2 text-xs text-danger">
+                      {errors.name.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Company */}
+                <div className="border-b border-border p-5">
+                  <label htmlFor="company" className={labelClass}>
+                    Company
+                  </label>
+
+                  <input
+                    id="company"
+                    type="text"
+                    autoComplete="organization"
+                    placeholder="Company name"
+                    {...register("company")}
+                    className={inputClass}
+                  />
+                </div>
+
+                {/* Email */}
+                <div className="border-b border-border p-5 sm:border-r">
+                  <label htmlFor="email" className={labelClass}>
+                    Email <span className="text-primary">*</span>
+                  </label>
+
+                  <input
+                    id="email"
+                    type="email"
+                    autoComplete="email"
+                    placeholder="you@company.com"
+                    {...register("email")}
+                    className={inputClass}
+                  />
+
+                  {errors.email && (
+                    <p className="mt-2 text-xs text-danger">
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Phone */}
+                <div className="border-b border-border p-5">
+                  <label htmlFor="phone" className={labelClass}>
+                    Phone
+                  </label>
+
+                  <input
+                    id="phone"
+                    type="tel"
+                    autoComplete="tel"
+                    placeholder="+91 98765 43210"
+                    {...register("phone")}
+                    className={inputClass}
+                  />
+
+                  {errors.phone && (
+                    <p className="mt-2 text-xs text-danger">
+                      {errors.phone.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Website */}
+                <div className="border-b border-border p-5">
+                  <label htmlFor="website" className={labelClass}>
+                    Website
+                  </label>
+
+                  <input
+                    id="website"
+                    type="url"
+                    autoComplete="url"
+                    placeholder="https://example.com"
+                    {...register("website")}
+                    className={inputClass}
+                  />
+
+                  {errors.website && (
+                    <p className="mt-2 text-xs text-danger">
+                      {errors.website.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Industry */}
+                <div className="border-b border-border p-5">
+                  <label htmlFor="industry" className={labelClass}>
+                    Industry
+                  </label>
+
+                  <input
+                    id="industry"
+                    type="text"
+                    placeholder="e.g. SaaS, Healthcare, Finance"
+                    {...register("industry")}
+                    className={inputClass}
+                  />
+
+                  {errors.industry && (
+                    <p className="mt-2 text-xs text-danger">
+                      {errors.industry.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Project Type */}
+                <div className="border-b border-border p-5 sm:col-span-2">
+                  <label htmlFor="projectType" className={labelClass}>
+                    Project Type <span className="text-primary">*</span>
+                  </label>
+
+                  <select
+                    id="projectType"
+                    {...register("projectType")}
+                    className={inputClass}
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Select a project type
+                    </option>
+
+                    {Object.entries(projectTypes).map(([label, value]) => (
+                      <option key={value} value={value}>
+                        {label}
+                      </option>
+                    ))}
+                  </select>
+
+                  {errors.projectType && (
+                    <p className="mt-2 text-xs text-danger">
+                      {errors.projectType.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Budget */}
+                <div className="border-b border-border p-5 sm:border-r">
+                  <label htmlFor="budget" className={labelClass}>
+                    Budget
+                  </label>
+
+                  <select
+                    id="budget"
+                    {...register("budget")}
+                    className={inputClass}
+                    defaultValue=""
+                  >
+                    <option value="">Select a range</option>
+                    <option value="Under ₹1L">Under ₹1L</option>
+                    <option value="₹1L – ₹3L">₹1L – ₹3L</option>
+                    <option value="₹3L – ₹5L">₹3L – ₹5L</option>
+                    <option value="₹5L – ₹10L">₹5L – ₹10L</option>
+                    <option value="₹10L+">₹10L+</option>
+                    <option value="Not sure">Not sure</option>
+                  </select>
+                </div>
+
+                {/* Timeline */}
+                <div className="border-b border-border p-5">
+                  <label htmlFor="timeline" className={labelClass}>
+                    Timeline
+                  </label>
+
+                  <select
+                    id="timeline"
+                    {...register("timeline")}
+                    className={inputClass}
+                    defaultValue=""
+                  >
+                    <option value="">Select a timeline</option>
+                    <option value="ASAP">ASAP</option>
+                    <option value="1–2 months">1–2 months</option>
+                    <option value="2–3 months">2–3 months</option>
+                    <option value="3–6 months">3–6 months</option>
+                    <option value="Flexible">Flexible</option>
+                  </select>
+                </div>
+
+                {/* Project Details */}
+                <div className="border-b border-border p-5 sm:col-span-2">
+                  <label htmlFor="projectDetails" className={labelClass}>
+                    Project Details <span className="text-primary">*</span>
+                  </label>
+
+                  <textarea
+                    id="projectDetails"
+                    rows={7}
+                    placeholder="Tell us about the project, what you're trying to achieve, and what you need help with..."
+                    {...register("projectDetails")}
+                    className={`${inputClass} resize-y`}
+                  />
+
+                  {errors.projectDetails && (
+                    <p className="mt-2 text-xs text-danger">
+                      {errors.projectDetails.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Referral */}
+                <div className="border-b border-border p-5 sm:col-span-2">
+                  <label htmlFor="referral" className={labelClass}>
+                    How did you hear about us?
+                  </label>
+
+                  <input
+                    id="referral"
+                    type="text"
+                    placeholder="Google, referral, LinkedIn, etc."
+                    {...register("referral")}
+                    className={inputClass}
+                  />
+                </div>
+              </div>
+
+              {/* Submit */}
+              <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
+                <p className="max-w-sm text-xs leading-5 text-muted-foreground">
+                  By submitting this form, you&apos;re giving us the information
+                  we need to understand your project.
                 </p>
 
                 <button
-                  type="button"
-                  onClick={() => reset()}
-                  className="mt-8 inline-flex items-center gap-2 border border-border px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="group inline-flex items-center justify-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-neutral transition-colors hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Submit another project
-                  <ArrowUpRight className="size-4" />
+                  {isSubmitting ? (
+                    <>
+                      Sending
+                      <Loader2 className="size-4 animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Send Project Details
+                      <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </>
+                  )}
                 </button>
               </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                noValidate
-                className="border border-border bg-card"
-              >
-                <div className="grid gap-0 sm:grid-cols-2">
-                  {/* Name */}
-                  <div className="border-b border-border p-5 sm:border-r">
-                    <label htmlFor="name" className={labelClass}>
-                      Name <span className="text-primary">*</span>
-                    </label>
 
-                    <input
-                      id="name"
-                      type="text"
-                      autoComplete="name"
-                      placeholder="Your name"
-                      {...register("name")}
-                      className={inputClass}
-                    />
-
-                    {errors.name && (
-                      <p className="mt-2 text-xs text-danger">
-                        {errors.name.message}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Company */}
-                  <div className="border-b border-border p-5">
-                    <label htmlFor="company" className={labelClass}>
-                      Company
-                    </label>
-
-                    <input
-                      id="company"
-                      type="text"
-                      autoComplete="organization"
-                      placeholder="Company name"
-                      {...register("company")}
-                      className={inputClass}
-                    />
-                  </div>
-
-                  {/* Email */}
-                  <div className="border-b border-border p-5 sm:border-r">
-                    <label htmlFor="email" className={labelClass}>
-                      Email <span className="text-primary">*</span>
-                    </label>
-
-                    <input
-                      id="email"
-                      type="email"
-                      autoComplete="email"
-                      placeholder="you@company.com"
-                      {...register("email")}
-                      className={inputClass}
-                    />
-
-                    {errors.email && (
-                      <p className="mt-2 text-xs text-danger">
-                        {errors.email.message}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Website */}
-                  <div className="border-b border-border p-5">
-                    <label htmlFor="website" className={labelClass}>
-                      Website
-                    </label>
-
-                    <input
-                      id="website"
-                      type="url"
-                      autoComplete="url"
-                      placeholder="https://example.com"
-                      {...register("website")}
-                      className={inputClass}
-                    />
-
-                    {errors.website && (
-                      <p className="mt-2 text-xs text-danger">
-                        {errors.website.message}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Project Type */}
-                  <div className="border-b border-border p-5 sm:col-span-2">
-                    <label htmlFor="projectType" className={labelClass}>
-                      Project Type <span className="text-primary">*</span>
-                    </label>
-
-                    <select
-                      id="projectType"
-                      {...register("projectType")}
-                      className={inputClass}
-                      defaultValue=""
-                    >
-                      <option value="" disabled>
-                        Select a project type
-                      </option>
-
-                      {projectTypes.map((type) => (
-                        <option key={type} value={type}>
-                          {type}
-                        </option>
-                      ))}
-                    </select>
-
-                    {errors.projectType && (
-                      <p className="mt-2 text-xs text-danger">
-                        {errors.projectType.message}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Budget */}
-                  <div className="border-b border-border p-5 sm:border-r">
-                    <label htmlFor="budget" className={labelClass}>
-                      Budget
-                    </label>
-
-                    <select
-                      id="budget"
-                      {...register("budget")}
-                      className={inputClass}
-                      defaultValue=""
-                    >
-                      <option value="">Select a range</option>
-                      <option value="Under ₹1L">Under ₹1L</option>
-                      <option value="₹1L – ₹3L">₹1L – ₹3L</option>
-                      <option value="₹3L – ₹5L">₹3L – ₹5L</option>
-                      <option value="₹5L – ₹10L">₹5L – ₹10L</option>
-                      <option value="₹10L+">₹10L+</option>
-                      <option value="Not sure">Not sure</option>
-                    </select>
-                  </div>
-
-                  {/* Timeline */}
-                  <div className="border-b border-border p-5">
-                    <label htmlFor="timeline" className={labelClass}>
-                      Timeline
-                    </label>
-
-                    <select
-                      id="timeline"
-                      {...register("timeline")}
-                      className={inputClass}
-                      defaultValue=""
-                    >
-                      <option value="">Select a timeline</option>
-                      <option value="ASAP">ASAP</option>
-                      <option value="1–2 months">1–2 months</option>
-                      <option value="2–3 months">2–3 months</option>
-                      <option value="3–6 months">3–6 months</option>
-                      <option value="Flexible">Flexible</option>
-                    </select>
-                  </div>
-
-                  {/* Project Details */}
-                  <div className="border-b border-border p-5 sm:col-span-2">
-                    <label htmlFor="projectDetails" className={labelClass}>
-                      Project Details <span className="text-primary">*</span>
-                    </label>
-
-                    <textarea
-                      id="projectDetails"
-                      rows={7}
-                      placeholder="Tell us about the project, what you're trying to achieve, and what you need help with..."
-                      {...register("projectDetails")}
-                      className={`${inputClass} resize-y`}
-                    />
-
-                    {errors.projectDetails && (
-                      <p className="mt-2 text-xs text-danger">
-                        {errors.projectDetails.message}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Referral */}
-                  <div className="border-b border-border p-5 sm:col-span-2">
-                    <label htmlFor="referral" className={labelClass}>
-                      How did you hear about us?
-                    </label>
-
-                    <input
-                      id="referral"
-                      type="text"
-                      placeholder="Google, referral, LinkedIn, etc."
-                      {...register("referral")}
-                      className={inputClass}
-                    />
-                  </div>
+              {/* Success */}
+              {submitSuccess && (
+                <div
+                  role="status"
+                  className="border-t border-border bg-primary/10 px-5 py-4 text-sm text-foreground"
+                >
+                  Thanks for reaching out. We&apos;ve received your project
+                  details and will get back to you soon.
                 </div>
+              )}
 
-                {/* Submit */}
-                <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="max-w-sm text-xs leading-5 text-muted-foreground">
-                    By submitting this form, you&apos;re giving us the
-                    information we need to understand your project.
-                  </p>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="group inline-flex items-center justify-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-neutral transition-colors hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-60"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        Sending
-                        <Loader2 className="size-4 animate-spin" />
-                      </>
-                    ) : (
-                      <>
-                        Send Project Details
-                        <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                      </>
-                    )}
-                  </button>
+              {/* Error */}
+              {submitError && (
+                <div
+                  role="alert"
+                  className="border-t border-danger bg-danger/10 px-5 py-4 text-sm text-danger"
+                >
+                  {submitError}
                 </div>
-
-                {submitError && (
-                  <div
-                    role="alert"
-                    className="border-t border-danger bg-danger/10 px-5 py-4 text-sm text-danger"
-                  >
-                    {submitError}
-                  </div>
-                )}
-              </form>
-            )}
+              )}
+            </form>
           </div>
         </div>
 
@@ -395,7 +403,7 @@ const ProjectForm = () => {
           </span>
 
           <span className="font-label text-[10px] text-muted-foreground">
-            03 / 05
+            Contact / 02
           </span>
         </div>
       </div>

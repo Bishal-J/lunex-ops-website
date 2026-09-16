@@ -1,25 +1,12 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
-const exploreLinks = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Work", href: "/work" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
-
-const serviceLinks = [
-  { label: "Websites", href: "/services/websites" },
-  { label: "Web Applications", href: "/services/web-applications" },
-  {
-    label: "Ongoing Development",
-    href: "/services/ongoing-development",
-  },
-];
+import { exploreLinks, serviceLinks } from "@/data/static";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -29,26 +16,32 @@ const Footer = () => {
           <div className="max-w-md">
             <Link
               href="/"
-              className="text-2xl font-semibold tracking-[-0.04em] text-foreground"
-              aria-label="Lunex home"
+              className="inline-flex shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+              aria-label="Lunex OPS home"
             >
-              <Image src={"/logo.svg"} alt="logo" width={165} height={44} />
+              <Image src="/logo.svg" alt="Lunex OPS" width={165} height={44} />
             </Link>
 
             <p className="mt-5 max-w-sm text-sm leading-6 text-muted-foreground">
-              Lunex <span className="text-primary">ops</span> designs and
-              develops high-performance websites and custom web applications for
+              Lunex <span className="text-primary">OPS</span> designs and
+              develops thoughtful websites and custom web applications for
               businesses and startups.
             </p>
           </div>
 
           {/* Explore */}
           <div>
-            <p className="font-label text-xs uppercase tracking-[0.16em] text-muted-foreground">
+            <p
+              id="footer-explore-heading"
+              className="font-label text-xs uppercase tracking-[0.16em] text-muted-foreground"
+            >
               Explore
             </p>
 
-            <nav className="mt-5 flex flex-col items-start gap-3">
+            <nav
+              aria-labelledby="footer-explore-heading"
+              className="mt-5 flex flex-col items-start gap-3"
+            >
               {exploreLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -63,11 +56,17 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <p className="font-label text-xs uppercase tracking-[0.16em] text-muted-foreground">
+            <p
+              id="footer-services-heading"
+              className="font-label text-xs uppercase tracking-[0.16em] text-muted-foreground"
+            >
               Services
             </p>
 
-            <nav className="mt-5 flex flex-col items-start gap-3">
+            <nav
+              aria-labelledby="footer-services-heading"
+              className="mt-5 flex flex-col items-start gap-3"
+            >
               {serviceLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -82,16 +81,23 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <p className="font-label text-xs uppercase tracking-[0.16em] text-muted-foreground">
+            <p
+              id="footer-contact-heading"
+              className="font-label text-xs uppercase tracking-[0.16em] text-muted-foreground"
+            >
               Contact
             </p>
 
             <Link
               href="/contact"
+              aria-labelledby="footer-contact-heading"
               className="group mt-5 inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-neutral transition-colors hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
-              Start a project
-              <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              Start a Project
+              <ArrowUpRight
+                aria-hidden="true"
+                className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
             </Link>
           </div>
         </div>
@@ -99,8 +105,8 @@ const Footer = () => {
         {/* Bottom */}
         <div className="flex flex-col gap-3 border-t border-border py-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-label text-[11px] text-muted-foreground">
-            © 2026 Lunex <span className="text-primary">ops</span>. All rights
-            reserved.
+            © {currentYear} Lunex <span className="text-primary">OPS</span>. All
+            rights reserved.
           </p>
 
           <p className="font-label text-[11px] uppercase tracking-[0.12em] text-muted-foreground">

@@ -5,19 +5,18 @@ import WhatIsLunex from "@/components/about-page/WhatIsLunex";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Lunex OPS",
+  title: "About Lunex OPS | Digital Development Studio",
   description:
-    "Lunex OPS is an independent digital development studio building serious websites and web applications for ambitious businesses.",
-
+    "Learn about Lunex OPS, an independent digital development studio building thoughtful websites and custom web applications for growing businesses.",
   alternates: {
     canonical: "/about",
   },
-
   openGraph: {
-    title: "About Lunex OPS",
+    title: "About Lunex OPS | Digital Development Studio",
     description:
-      "A small studio building serious digital products through thoughtful design and engineering.",
+      "Discover the approach behind Lunex OPS and how we combine thoughtful design with practical engineering.",
     url: "/about",
+    type: "website",
     images: [
       {
         url: "/og-image.png",
@@ -26,6 +25,13 @@ export const metadata: Metadata = {
         alt: "About Lunex OPS",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Lunex OPS | Digital Development Studio",
+    description:
+      "Discover the approach behind Lunex OPS and how we build thoughtful digital products.",
+    images: ["/og-image.png"],
   },
 };
 

@@ -7,33 +7,38 @@ const conceptProjects = [
     category: "Finance",
     title: "Investment / Portfolio Analytics Platform",
     description:
-      "A concept platform for tracking portfolios, analyzing performance and turning investment data into clear insights.",
+      "A concept platform for tracking portfolios, analyzing performance, and turning investment data into clear insights.",
   },
   {
     number: "02",
     category: "Real Estate",
     title: "Real Estate Investment Platform",
     description:
-      "A concept digital platform for discovering, evaluating and managing real estate investment opportunities.",
+      "A concept digital platform for discovering, evaluating, and managing real estate investment opportunities.",
   },
   {
     number: "03",
     category: "SaaS",
     title: "SaaS Management Platform",
     description:
-      "A concept management platform for monitoring products, users, subscriptions and operational data.",
+      "A concept management platform for monitoring products, users, subscriptions, and operational data.",
   },
 ];
 
 const ConceptProjects = () => {
+  const conceptCount = String(conceptProjects.length).padStart(2, "0");
+
   return (
-    <section className="border-b border-border bg-background">
+    <section
+      aria-labelledby="concept-projects-heading"
+      className="border-b border-border bg-background"
+    >
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
         {/* Header */}
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
             <div className="flex items-center gap-3">
-              <span className="size-2 bg-primary" />
+              <span aria-hidden="true" className="size-2 bg-primary" />
 
               <p className="font-label text-xs uppercase tracking-[0.18em] text-muted-foreground">
                 Concepts
@@ -42,14 +47,16 @@ const ConceptProjects = () => {
           </div>
 
           <div>
-            <h2 className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl">
+            <h2
+              id="concept-projects-heading"
+              className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl"
+            >
               Exploring what&apos;s possible.
             </h2>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               Selected product concepts exploring how thoughtful design and
-              engineering can solve complex problems across different
-              industries.
+              engineering can address different business and industry needs.
             </p>
           </div>
         </div>
@@ -60,11 +67,13 @@ const ConceptProjects = () => {
             <Link
               key={project.number}
               href="/contact"
+              aria-label={`Discuss a ${project.title} project`}
               className="group flex min-h-120 flex-col bg-background transition-colors duration-300 hover:bg-card focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
             >
               {/* Visual */}
               <div className="relative aspect-4/3 overflow-hidden border-b border-border bg-muted">
                 <div
+                  aria-hidden="true"
                   className="absolute inset-0 opacity-50 transition-transform duration-700 group-hover:scale-105"
                   style={{
                     backgroundImage:
@@ -73,8 +82,11 @@ const ConceptProjects = () => {
                   }}
                 />
 
-                {/* Abstract interface */}
-                <div className="absolute inset-8 border border-border bg-background sm:inset-10">
+                {/* Abstract Interface */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-8 border border-border bg-background sm:inset-10"
+                >
                   <div className="flex h-8 items-center border-b border-border px-3">
                     <div className="h-1.5 w-16 bg-muted-foreground/30" />
                   </div>
@@ -104,7 +116,10 @@ const ConceptProjects = () => {
                 </div>
 
                 {/* Project Number */}
-                <span className="absolute left-4 top-4 font-label text-[10px] text-muted-foreground">
+                <span
+                  aria-hidden="true"
+                  className="absolute left-4 top-4 font-label text-[10px] text-muted-foreground"
+                >
                   {project.number}
                 </span>
 
@@ -114,7 +129,10 @@ const ConceptProjects = () => {
                 </span>
 
                 {/* Arrow */}
-                <span className="absolute bottom-4 right-4 flex size-9 items-center justify-center border border-border bg-background text-foreground transition-colors duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-neutral">
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-4 right-4 flex size-9 items-center justify-center border border-border bg-background text-foreground transition-colors duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-neutral"
+                >
                   <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </span>
               </div>
@@ -137,7 +155,10 @@ const ConceptProjects = () => {
 
                 <div className="mt-auto flex items-center gap-2 pt-8 text-sm font-medium text-foreground">
                   Explore Concept
-                  <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
                 </div>
               </div>
             </Link>
@@ -146,7 +167,7 @@ const ConceptProjects = () => {
 
         {/* Clarification */}
         <div className="mt-6 flex items-center gap-3">
-          <span className="size-1.5 bg-primary" />
+          <span aria-hidden="true" className="size-1.5 bg-primary" />
 
           <p className="font-label text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
             Concept projects — independent explorations, not client work
@@ -154,13 +175,13 @@ const ConceptProjects = () => {
         </div>
 
         {/* Metadata */}
-        <div className="mt-10 flex items-center justify-between border-t border-border pt-5">
+        <div className="mt-10 flex flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
           <span className="font-label text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
             Finance / Real Estate / SaaS
           </span>
 
           <span className="font-label text-[10px] text-muted-foreground">
-            03 concepts
+            {conceptCount} concepts
           </span>
         </div>
       </div>

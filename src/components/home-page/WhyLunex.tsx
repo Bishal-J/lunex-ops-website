@@ -1,47 +1,43 @@
+import { capabilities } from "@/data/static";
 import { ArrowUpRight } from "lucide-react";
 
-const capabilities = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Node.js",
-  "PostgreSQL",
-  "APIs & Integrations",
-  "Authentication",
-  "Payments",
-  "Performance",
-];
-
 const WhyLunex = () => {
+  const capabilityCount = String(capabilities.length).padStart(2, "0");
+
   return (
-    <section className="border-b border-border bg-background">
+    <section
+      aria-labelledby="why-lunex-heading"
+      className="border-b border-border bg-background"
+    >
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
         <div className="grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-24">
           {/* Message */}
           <div>
             <div className="flex items-center gap-3">
-              <span className="size-2 bg-primary" />
+              <span aria-hidden="true" className="size-2 bg-primary" />
 
               <p className="font-label text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                Why Lunex <span className="text-primary">ops</span>
+                Why Lunex <span className="text-primary">OPS</span>
               </p>
             </div>
 
-            <h2 className="mt-8 max-w-xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl">
-              Engineered for the real world.
+            <h2
+              id="why-lunex-heading"
+              className="mt-8 max-w-xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl"
+            >
+              Engineering that supports the experience.
             </h2>
 
             <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              Complex functionality shouldn&apos;t mean a complicated
-              experience.
+              Strong digital products bring thoughtful interfaces and dependable
+              technology together.
             </p>
 
             <p className="mt-5 max-w-lg text-sm leading-6 text-muted-foreground">
-              From responsive interfaces to integrations, authentication,
-              payments and data-driven systems, Lunex{" "}
-              <span className="text-primary">ops</span> handles the engineering
-              behind the experience so your product stays clear, fast and
-              usable.
+              From responsive interfaces and integrations to authentication,
+              payments, and data-driven systems, Lunex{" "}
+              <span className="text-primary">OPS</span> helps turn complex
+              requirements into clear, usable digital experiences.
             </p>
           </div>
 
@@ -54,7 +50,7 @@ const WhyLunex = () => {
               </span>
 
               <span className="font-label text-[10px] text-muted-foreground">
-                09 / 09
+                {capabilityCount} / {capabilityCount}
               </span>
             </div>
 
@@ -72,7 +68,10 @@ const WhyLunex = () => {
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="font-label text-[10px] text-muted-foreground">
+                    <span
+                      aria-hidden="true"
+                      className="font-label text-[10px] text-muted-foreground"
+                    >
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
@@ -81,31 +80,34 @@ const WhyLunex = () => {
                     </span>
                   </div>
 
-                  <ArrowUpRight className="size-3.5 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="size-3.5 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+                  />
                 </div>
               ))}
             </div>
 
             {/* System Footer */}
-            <div className="flex items-center justify-between border-t border-border px-5 py-4">
+            <div className="flex flex-col gap-3 border-t border-border px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
               <span className="font-label text-[9px] uppercase tracking-[0.14em] text-muted-foreground">
                 Infrastructure / Interface / Performance
               </span>
 
               <span className="flex items-center gap-2 font-label text-[9px] uppercase tracking-[0.14em] text-muted-foreground">
-                <span className="size-1.5 bg-primary" />
-                Production ready
+                <span aria-hidden="true" className="size-1.5 bg-primary" />
+                Built with intention
               </span>
             </div>
           </div>
         </div>
 
-        {/* Bottom statement */}
+        {/* Bottom Statement */}
         <div className="mt-16 border-t border-border pt-6">
           <p className="max-w-4xl text-2xl font-medium leading-tight tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-            The technology stays behind the scenes.{" "}
+            The technology works behind the scenes.{" "}
             <span className="text-muted-foreground">
-              The experience stays simple.
+              The experience remains clear and simple.
             </span>
           </p>
         </div>

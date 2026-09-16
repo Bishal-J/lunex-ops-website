@@ -4,9 +4,9 @@ import WhatHappensNext from "@/components/contact-page/WhatHappensNext";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Start a Project",
+  title: "Start a Project | Lunex OPS",
   description:
-    "Have a website, web application or digital product in mind? Tell Lunex OPS what you're building and let's work out what comes next.",
+    "Have a website, web application, or digital product in mind? Tell Lunex OPS about your project and explore what comes next.",
 
   alternates: {
     canonical: "/contact",
@@ -15,8 +15,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Start a Project | Lunex OPS",
     description:
-      "Tell Lunex OPS about your project, idea or problem and let's build something useful.",
+      "Tell Lunex OPS about your project, idea, or problem and explore the next steps.",
     url: "/contact",
+    type: "website",
     images: [
       {
         url: "/og-image.png",
@@ -25,6 +26,14 @@ export const metadata: Metadata = {
         alt: "Start a project with Lunex OPS",
       },
     ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Start a Project | Lunex OPS",
+    description:
+      "Tell Lunex OPS about your project, idea, or problem and explore the next steps.",
+    images: ["/og-image.png"],
   },
 };
 

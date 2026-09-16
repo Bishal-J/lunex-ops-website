@@ -1,30 +1,19 @@
-const principles = [
-  {
-    number: "01",
-    title: "Don't sell technology.",
-    statement: "Sell the outcome.",
-  },
-  {
-    number: "02",
-    title: "Don't build for the sake of building.",
-    statement: "Solve a real business problem.",
-  },
-  {
-    number: "03",
-    title: "Don't stop at launch.",
-    statement: "Build products that can evolve.",
-  },
-];
+import { principles } from "@/data/static";
 
 const HowWeThink = () => {
+  const principleCount = String(principles.length).padStart(2, "0");
+
   return (
-    <section className="border-b border-border bg-background">
+    <section
+      className="border-b border-border bg-background"
+      aria-labelledby="how-we-think-heading"
+    >
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
         {/* Header */}
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
             <div className="flex items-center gap-3">
-              <span className="size-2 bg-primary" />
+              <span className="size-2 bg-primary" aria-hidden="true" />
 
               <p className="font-label text-xs uppercase tracking-[0.18em] text-muted-foreground">
                 How We Think
@@ -33,13 +22,16 @@ const HowWeThink = () => {
           </div>
 
           <div>
-            <h2 className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl">
+            <h2
+              id="how-we-think-heading"
+              className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl"
+            >
               Outcomes over technology.
             </h2>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               The tools change. The goal doesn&apos;t. We focus on creating
-              useful digital products that move the business forward.
+              useful digital products that move businesses forward.
             </p>
           </div>
         </div>
@@ -47,16 +39,22 @@ const HowWeThink = () => {
         {/* Principles */}
         <div className="mt-16 grid gap-px border border-border bg-border md:grid-cols-3">
           {principles.map((principle) => (
-            <div
+            <article
               key={principle.number}
               className="group flex min-h-75 flex-col bg-background p-6 transition-colors duration-300 hover:bg-card sm:p-8"
             >
-              <span className="font-label text-[10px] text-muted-foreground">
+              <span
+                className="font-label text-[10px] text-muted-foreground"
+                aria-hidden="true"
+              >
                 {principle.number}
               </span>
 
               <div className="mt-auto">
-                <div className="mb-6 h-1 w-8 bg-primary transition-all duration-300 group-hover:w-14" />
+                <div
+                  className="mb-6 h-1 w-8 bg-primary transition-all duration-300 group-hover:w-14"
+                  aria-hidden="true"
+                />
 
                 <h3 className="max-w-xs text-2xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-3xl">
                   {principle.title}
@@ -66,11 +64,11 @@ const HowWeThink = () => {
                   {principle.statement}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
-        {/* Closing statement */}
+        {/* Closing Statement */}
         <div className="mt-16 border-t border-border pt-8">
           <p className="max-w-4xl text-2xl font-medium leading-tight tracking-[-0.03em] text-foreground sm:text-3xl lg:text-4xl">
             Good technology supports the solution.{" "}
@@ -81,13 +79,13 @@ const HowWeThink = () => {
         </div>
 
         {/* Metadata */}
-        <div className="mt-16 flex items-center justify-between border-t border-border pt-5">
+        <div className="mt-16 flex flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
           <span className="font-label text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
             Outcome / Purpose / Evolution
           </span>
 
           <span className="font-label text-[10px] text-muted-foreground">
-            04 / 07
+            About / 04 · {principleCount} Principles
           </span>
         </div>
       </div>

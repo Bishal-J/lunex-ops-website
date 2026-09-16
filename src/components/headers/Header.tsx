@@ -1,16 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { Menu, X, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
-const navigation = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Work", href: "/work" },
-  { label: "About", href: "/about" },
-];
+import { navigation } from "@/data/static";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,10 +21,16 @@ const Header = () => {
         <Link
           href="/"
           onClick={closeMenu}
-          className="text-xl font-semibold tracking-[-0.04em] text-foreground"
-          aria-label="Lunex home"
+          className="shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+          aria-label="Lunex OPS home"
         >
-          <Image src={"/logo.svg"} alt="logo" width={165} height={44} />
+          <Image
+            src="/logo.svg"
+            alt="Lunex OPS"
+            width={165}
+            height={44}
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -53,8 +54,8 @@ const Header = () => {
           href="/contact"
           className="hidden items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-neutral transition-colors hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring md:inline-flex"
         >
-          Start a project
-          <ArrowUpRight className="size-4" />
+          Start a Project
+          <ArrowUpRight aria-hidden="true" className="size-4" />
         </Link>
 
         {/* Mobile Menu Button */}
@@ -66,7 +67,11 @@ const Header = () => {
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
         >
-          {isMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+          {isMenuOpen ? (
+            <X aria-hidden="true" className="size-5" />
+          ) : (
+            <Menu aria-hidden="true" className="size-5" />
+          )}
         </button>
       </div>
 
@@ -76,8 +81,9 @@ const Header = () => {
         className={`grid overflow-hidden border-t border-border bg-background transition-all duration-300 ease-out md:hidden ${
           isMenuOpen
             ? "grid-rows-[1fr] opacity-100"
-            : "grid-rows-[0fr] opacity-0"
+            : "pointer-events-none grid-rows-[0fr] opacity-0"
         }`}
+        aria-hidden={!isMenuOpen}
       >
         <div className="min-h-0 overflow-hidden">
           <nav
@@ -91,24 +97,30 @@ const Header = () => {
                 key={item.href}
                 href={item.href}
                 onClick={closeMenu}
-                className={`flex items-center justify-between py-4 text-sm font-medium text-foreground ${
+                tabIndex={isMenuOpen ? 0 : -1}
+                className={`flex items-center justify-between py-4 text-sm font-medium text-foreground transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${
                   index !== navigation.length - 1
                     ? "border-b border-border"
                     : ""
                 }`}
               >
                 {item.label}
-                <ArrowUpRight className="size-4 text-muted-foreground" />
+
+                <ArrowUpRight
+                  aria-hidden="true"
+                  className="size-4 text-muted-foreground"
+                />
               </Link>
             ))}
 
             <Link
               href="/contact"
               onClick={closeMenu}
-              className="mt-4 flex items-center justify-between bg-primary px-5 py-4 text-sm font-semibold text-neutral transition-colors hover:bg-foreground hover:text-background"
+              tabIndex={isMenuOpen ? 0 : -1}
+              className="mt-4 flex items-center justify-between bg-primary px-5 py-4 text-sm font-semibold text-neutral transition-colors hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
-              Start a project
-              <ArrowUpRight className="size-4" />
+              Start a Project
+              <ArrowUpRight aria-hidden="true" className="size-4" />
             </Link>
           </nav>
         </div>

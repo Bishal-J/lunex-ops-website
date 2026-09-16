@@ -1,46 +1,21 @@
 import Link from "next/link";
+
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
-const projects = [
-  {
-    number: "01",
-    title: "Growth Sailor",
-    category: "CLIENT PROJECT",
-    href: "/work/growth-sailor",
-    featured: true,
-  },
-  {
-    number: "02",
-    title: "Investment Analytics Platform",
-    category: "CONCEPT / FINTECH",
-    href: "/work/investment-analytics",
-    featured: false,
-  },
-  {
-    number: "03",
-    title: "Real Estate Investment Platform",
-    category: "CONCEPT / REAL ESTATE",
-    href: "/work/real-estate-platform",
-    featured: false,
-  },
-  {
-    number: "04",
-    title: "SaaS Management Platform",
-    category: "CONCEPT / SAAS",
-    href: "/work/saas-management",
-    featured: false,
-  },
-];
+import { projects } from "@/data/static";
 
 const SelectedWork = () => {
   return (
-    <section className="border-b border-border bg-background">
+    <section
+      aria-labelledby="selected-work-heading"
+      className="border-b border-border bg-background"
+    >
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
         {/* Section Header */}
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <div className="flex items-center gap-3">
-              <span className="size-2 bg-primary" />
+              <span aria-hidden="true" className="size-2 bg-primary" />
 
               <p className="font-label text-xs uppercase tracking-[0.18em] text-muted-foreground">
                 Selected Work
@@ -49,13 +24,17 @@ const SelectedWork = () => {
           </div>
 
           <div>
-            <h2 className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl">
-              Work built to make an impact.
+            <h2
+              id="selected-work-heading"
+              className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl"
+            >
+              Digital products designed to bring ideas to life.
             </h2>
 
             <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              A selection of digital products and experiences built by Lunex
-              OPS.
+              Explore a selection of projects that reflect our approach to
+              thoughtful design, practical engineering, and purposeful digital
+              experiences.
             </p>
           </div>
         </div>
@@ -66,12 +45,14 @@ const SelectedWork = () => {
             <Link
               key={project.number}
               href={project.href}
+              aria-label={`View ${project.title} project`}
               className={`group block ${
                 project.featured ? "md:col-span-2" : ""
               }`}
             >
               {/* Project Visual */}
               <div
+                aria-hidden="true"
                 className={`relative overflow-hidden border border-border bg-card ${
                   project.featured
                     ? "aspect-16/8 sm:aspect-16/7"
@@ -91,9 +72,9 @@ const SelectedWork = () => {
                 {/* Project Interface */}
                 <div className="absolute inset-8 flex items-center justify-center sm:inset-12">
                   <div className="relative h-full w-full border border-foreground/10">
-                    {/* Main visual block */}
+                    {/* Main Visual Block */}
                     <div
-                      className={`absolute left-1/2 top-1/2 aspect-video w-[55%] -translate-x-1/2 -translate-y-1/2 border border-foreground/20 bg-background transition-transform duration-500 group-hover:scale-[1.03] ${
+                      className={`absolute left-1/2 top-1/2 aspect-video -translate-x-1/2 -translate-y-1/2 border border-foreground/20 bg-background transition-transform duration-500 group-hover:scale-[1.03] ${
                         project.featured ? "w-[55%]" : "w-[60%]"
                       }`}
                     >
@@ -108,8 +89,9 @@ const SelectedWork = () => {
                       <div className="absolute bottom-5 left-5 h-2 w-1/2 bg-muted" />
                     </div>
 
-                    {/* Interface lines */}
+                    {/* Interface Lines */}
                     <div className="absolute left-1/2 top-0 h-full w-px bg-border/50" />
+
                     <div className="absolute left-0 top-1/2 h-px w-full bg-border/50" />
                   </div>
                 </div>
@@ -123,6 +105,7 @@ const SelectedWork = () => {
                   {project.category}
                 </span>
 
+                {/* Project Link Icon */}
                 <span className="absolute bottom-5 right-5 flex size-9 items-center justify-center border border-border bg-background text-foreground transition-colors duration-200 group-hover:border-primary group-hover:bg-primary group-hover:text-neutral">
                   <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </span>
@@ -154,8 +137,11 @@ const SelectedWork = () => {
             href="/work"
             className="group inline-flex items-center gap-2 border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           >
-            View All Work
-            <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
+            Explore All Work
+            <ArrowRight
+              aria-hidden="true"
+              className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+            />
           </Link>
         </div>
       </div>
